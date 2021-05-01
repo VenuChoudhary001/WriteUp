@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { db } from "../lib/firebase";
 import Link from "next/link";
 import DisplayMessage from "../helpers/snackbar";
-function Posts({ id, imageURL, content, title, publishedAt, user }) {
+function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
   const { profile } = useContext(ProfileContext);
   const getDATE = new Date(publishedAt);
   const router = useRouter();
@@ -23,7 +23,7 @@ function Posts({ id, imageURL, content, title, publishedAt, user }) {
   const displayAllComment = async () => {
     const data = await db
       .collection("blogPosts")
-      .doc(id)
+      .doc(postID)
       .collection("comments")
       .get();
     if (data) {
@@ -35,7 +35,7 @@ function Posts({ id, imageURL, content, title, publishedAt, user }) {
 
   const postComment = () => {
     if (profile) {
-      db.collection("blogPosts").doc(id).collection("comments").add({
+      db.collection("blogPosts").doc(postID).collection("comments").add({
         user: user,
         comment: myComment,
       });

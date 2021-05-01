@@ -34,6 +34,7 @@ function Index({ blogs }) {
   return (
     <>
       {blogs.map((item) => {
+        // console.log(item);
         return (
           <Posts
             key={item.id}
@@ -43,6 +44,7 @@ function Index({ blogs }) {
             title={item.title}
             publishedAt={item.publishedAt}
             id={item.uid}
+            postID={item.id}
           />
         );
       })}
