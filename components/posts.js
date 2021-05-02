@@ -1,5 +1,7 @@
 import { Avatar, Button, Container, Grid, Typography } from "@material-ui/core";
 import React, { useState, useEffect, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import ProfileContext from "../context/profile";
 import { useRouter } from "next/router";
 import { db, serverTime } from "../lib/firebase";
@@ -120,7 +122,7 @@ function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
         >
           {allComment
             ? allComment.map((item) => (
-                <Grid item key={new Date().getSeconds().toString()}>
+                <Grid item key={uuidv4()}>
                   <Link href={`/profile/${item.profileURL}`}>
                     <span className="post__comment__user">{item.user}</span>
                   </Link>

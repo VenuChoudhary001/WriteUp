@@ -7,8 +7,34 @@ import ProfileContext from "../context/profile";
 import GlobalContext from "../context/global";
 function Index({ blogs }) {
   // console.log("this is data", blogs);
+  // const [blogs, setBlogs] = useState();
   const { setProfile, profile } = useContext(ProfileContext);
-  if (blogs.length == 0) {
+  const { blogPost, setBlogPost } = useContext(GlobalContext);
+
+  /*
+  const getData = async () => {
+    const docRef = await db
+      .collection("blogPosts")
+      .orderBy("publishedAt", "desc")
+      .get();
+
+    const res = docRef.docs.map((docSnap) => {
+      return {
+        ...docSnap.data(),
+        publishedAt: docSnap.data().publishedAt.toMillis(),
+        id: docSnap.id,
+      };
+    });
+    setBlogs(res);
+  };*/
+
+  // useEffect(() => {
+  //   if (!auth.currentUser) {
+  //     setProfile();
+  //   }
+  //   // getData();
+  // }, []);
+  if (!blogs) {
     return (
       <div className="loading my-5 py-4 text-center">
         <Typography variant="subtitle1">
@@ -22,11 +48,8 @@ function Index({ blogs }) {
       </div>
     );
   }
-
   useEffect(() => {
-    if (!auth.currentUser) {
-      setProfile();
-    }
+    if (!auth.currentUser) setProfile();
   }, []);
   // useEffect(()=>{
 
