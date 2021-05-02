@@ -16,6 +16,11 @@ const Theme = createMuiTheme({
       fontWeight: 300,
       textTransform: "none",
     },
+    subtitle2: {
+      fontFamily: "Raleway",
+      fontWeight: 300,
+      textTransform: "none",
+    },
   },
   palette: {
     primary: {

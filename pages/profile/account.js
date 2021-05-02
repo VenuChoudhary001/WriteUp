@@ -32,10 +32,9 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(8),
   },
   rootBadge: {
-    "&.MuiBadge-anchorOriginTopRightRectangle": {
-      bottom: "0px",
-      right: "2px",
-    },
+    // "& .MuiBadge-anchorOriginTopRightRectangle": {
+    top: "12px",
+    right: "5px",
   },
 }));
 
@@ -97,7 +96,7 @@ function Profile() {
   useEffect(() => {
     getData();
   }, []);*/
-  console.log(profile);
+  // console.log(profile);
 
   const handleLogOut = () => {
     auth
@@ -105,7 +104,7 @@ function Profile() {
       .then(() => {
         setDisplay(!display);
         setDisplayMessage("Successfully Logged Out");
-        console.log("logged out");
+        // console.log("logged out");
       })
       .catch((err) => {
         setDisplay(!display);
@@ -130,8 +129,9 @@ function Profile() {
               badgeContent={<CameraAltIcon />}
               anchorOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
+              classes={{ anchorOriginTopRightRectangle: classes.rootBadge }}
               onClick={() => setImageUpload(!imageUpload)}
             >
               <Avatar

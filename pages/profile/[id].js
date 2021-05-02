@@ -29,7 +29,7 @@ function SearchId() {
   const route = useRouter();
   const classes = useStyles();
   const searchID = route.query;
-  console.log(searchID);
+  // console.log(searchID);
   const getData = async () => {
     let res = db
       .collection("Profiles")
@@ -40,7 +40,7 @@ function SearchId() {
             setName(item.data().user);
             setImageURL(item.data().imageURL);
             setBio(item.data().bio);
-            console.log(item.data());
+            // console.log(item.data());
             return item;
           }
         });
@@ -86,7 +86,7 @@ function SearchId() {
         <Container>
           <Grid container justify="flex-start" alignItems="flex-start">
             <Grid item>
-              {bio ? <Typography variant="caption">{bio}</Typography> : ""}
+              {bio ? <Typography variant="body2">{bio}</Typography> : ""}
             </Grid>
           </Grid>
         </Container>

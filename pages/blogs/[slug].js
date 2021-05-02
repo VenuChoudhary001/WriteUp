@@ -10,14 +10,13 @@ function Slug() {
   const [post, setPost] = useState();
   const getData = () => {
     db.collection("blogPosts")
+      .doc(id.slug)
       .get()
       .then((docSnap) => {
-        docSnap.docs.forEach((item) => {
-          if (item.data().uid === id.slug) {
-            setPost({ ...item.data() });
-          }
-        });
+        // console.log(docSnap.data());
+        setPost({ ...docSnap.data() });
       });
+
     // console.log(post);
   };
 
@@ -28,7 +27,9 @@ function Slug() {
   if (!post) {
     return (
       <>
-        <h6>Loading.....</h6>
+        <div className="mx-auto my-3 py-2 blog__slug__loading">
+          <Typography variant="subtitle1">😁😉😆</Typography>
+        </div>
       </>
     );
   }

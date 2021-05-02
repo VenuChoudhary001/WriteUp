@@ -84,7 +84,7 @@ a {
 }
 .post {
   max-width: 600px;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
   margin: 1px auto;
 }
 .post__image {
@@ -147,13 +147,27 @@ a {
   width: 100%;
 }
 .post__comment__user {
+  font-size: 1rem;
   font-weight: bolder;
   font-style: italic;
   padding-right: 2px;
 }
+.post__comment__user:hover {
+  cursor: pointer;
+}
+.blog__slug__loading {
+  margin: 2px auto;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
 .blog__post__image {
   object-fit: contain;
   width: 100%;
+  max-width: 500px;
+}
+.blog__post {
+  margin: 2px auto;
   max-width: 500px;
 }
 

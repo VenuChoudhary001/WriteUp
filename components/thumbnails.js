@@ -15,12 +15,9 @@ function Thumbnails({ id }) {
         return {
           ...docSnap.data(),
         };
-      else {
-        return {};
-      }
     });
     setPost(res);
-    console.log(post);
+    console.log(res);
   };
   useEffect(() => {
     getData();
@@ -29,19 +26,22 @@ function Thumbnails({ id }) {
   return (
     <>
       {post
-        ? post.map((item) => (
-            <Grid item xs={6} sm={4} md={3}>
-              <div className="thumbnail">
-                <div className="thumbnail__icon">
-                  <Icon>
-                    <FavoriteBorderOutlinedIcon />
-                  </Icon>
-                </div>
+        ? post.map((item) => {
+            if (item)
+              return (
+                <Grid item xs={6} sm={4} md={3}>
+                  <div className="thumbnail">
+                    <div className="thumbnail__icon">
+                      <Icon>
+                        <FavoriteBorderOutlinedIcon />
+                      </Icon>
+                    </div>
 
-                <img src={item.imageURL} className="thumbnail__image" />
-              </div>
-            </Grid>
-          ))
+                    <img src={item.imageURL} className="thumbnail__image" />
+                  </div>
+                </Grid>
+              );
+          })
         : ""}
     </>
   );
