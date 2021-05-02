@@ -44,6 +44,9 @@ function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
         profileURL: profile.uid,
       });
       setUpdateComment(!updateComment);
+      setDisplay(!display);
+      setDisplayMessage("Successfull 🎉🎉✨");
+      setMyComment("");
     } else {
       setDisplay(!display);
       setDisplayMessage("Please Log In");
@@ -150,6 +153,7 @@ function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
               type="text"
               className="post__comment__input"
               placeholder="comment"
+              value={myComment}
               onChange={(e) => setMyComment(e.target.value)}
             />
           </Grid>
