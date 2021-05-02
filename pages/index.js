@@ -34,7 +34,7 @@ function Index({ blogs }) {
   return (
     <>
       {blogs.map((item) => {
-        console.log(item.uid);
+        // console.log(item.uid);
         return (
           <Posts
             key={item.id}

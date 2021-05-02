@@ -13,7 +13,9 @@ function Footer() {
         height: "100px",
       }}
     >
-      Created By Venu Choudhary ✌✌
+      © Venu Choudhary ✌✌
+      <br />
+      2021
     </div>
   );
 }

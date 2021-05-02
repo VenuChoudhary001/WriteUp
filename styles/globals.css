@@ -85,7 +85,7 @@ a {
 .post {
   max-width: 600px;
   /* border: 1px solid lightgray; */
-  margin: 1px auto;
+  margin: auto;
 }
 .post__image {
   object-fit: cover;

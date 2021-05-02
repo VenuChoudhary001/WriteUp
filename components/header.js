@@ -37,7 +37,7 @@ function Header() {
   const route = useRouter();
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <Typography variant="subtitle1" className="header__logo">
             WriteUp

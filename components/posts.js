@@ -142,7 +142,6 @@ function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
           justify="center"
           alignItems="center"
           className="mb-2 px-2"
-          spacing={1}
         >
           <Grid item xs>
             <input
@@ -154,6 +153,7 @@ function Posts({ id, imageURL, content, title, publishedAt, user, postID }) {
           </Grid>
           <Grid item xs={2}>
             <Button
+              className="pl-1"
               disableElevation
               variant="contained"
               color="secondary"
